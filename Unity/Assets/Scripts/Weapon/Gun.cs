@@ -51,6 +51,8 @@ public class Gun : MonoBehaviour
         }
     }
 
+    void OnDisable() => gunData.reloading = false;
+
     void OnGunShot()
     {
         
@@ -58,7 +60,7 @@ public class Gun : MonoBehaviour
 
     void StartReload()
     {
-        if(!gunData.reloading)
+        if(!gunData.reloading && this.gameObject.activeSelf)
         {
             StartCoroutine(Reload());
         }
