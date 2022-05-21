@@ -252,7 +252,7 @@ public class PlayerController : MonoBehaviour
         grapplingHook.LookAt(grapplingHookPosition);
         Vector3 grapplingHookDir = (grapplingHookPosition - transform.position).normalized;
 
-        float grapplingHookReleaseDistance = 1f;
+        float grapplingHookReleaseDistance = 1.5f;
 
         controller.Move(grapplingHookDir * grapplingHookSpeed * Time.deltaTime);
         grapplingHookSize -= grapplingHookSpeed * Time.deltaTime;
